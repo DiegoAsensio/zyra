@@ -10,10 +10,7 @@ class NavLink extends Component
 {
 
 
-    public function __construct(public string $route)
-    {
-
-    }
+    public function __construct(public string $route){}
 
     /**
      * Get the view / contents that represent the component.

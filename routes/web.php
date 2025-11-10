@@ -8,5 +8,5 @@ Route::get('sobre-nosotros',[\App\Http\Controllers\HomeController::class, 'about
 
 Route::get('comentarios', [\App\Http\Controllers\HomeController::class, 'opinions'])->name('opinions');
 
-Route::get('membresias', [\App\Http\Controllers\PlanesController::class, 'memberships']) ->name('plansList');
+Route::get('membresias', [\App\Http\Controllers\MembershipsController::class, 'memberships']) ->name('memberships');
 
