@@ -61,6 +61,12 @@ class User extends Authenticatable
         ];
     }
 
+    public function membership(){
+
+    return $this->belongsTo(Membership::class);
+
+    }
+
     /**
      * Check if user is admin
      *
@@ -90,4 +96,6 @@ class User extends Authenticatable
     {
         return $this->hasMany(Reservation::class);
     }
+
+
 }

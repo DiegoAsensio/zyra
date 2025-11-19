@@ -20,7 +20,7 @@
                                 <i class="fas fa-star"></i> Más popular
                             </div>
                         @endif
-                        
+
                         <div class="membership-header">
                             <div class="tier-icon">
                                 @switch($membership->tier->name)
@@ -55,7 +55,7 @@
                                     <span>días de acceso</span>
                                 </div>
                             </div>
-                            
+
                             <div class="feature-item">
                                 <i class="fas fa-check-circle"></i>
                                 <div>
@@ -67,32 +67,9 @@
                             <div class="feature-item">
                                 <i class="fas fa-check-circle"></i>
                                 <div>
-                                    <span>Acceso a salas de reunión</span>
+                                    <span>{{ $membership->tier->description }}</span>
                                 </div>
                             </div>
-
-                            <div class="feature-item">
-                                <i class="fas fa-check-circle"></i>
-                                <div>
-                                    <span>WiFi de alta velocidad</span>
-                                </div>
-                            </div>
-
-                            <div class="feature-item">
-                                <i class="fas fa-check-circle"></i>
-                                <div>
-                                    <span>Café y bebidas incluidas</span>
-                                </div>
-                            </div>
-
-                            @if($membership->tier->name === 'Premium')
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle"></i>
-                                    <div>
-                                        <span>Acceso a eventos exclusivos</span>
-                                    </div>
-                                </div>
-                            @endif
                         </div>
 
                         <div class="membership-footer">
@@ -113,7 +90,7 @@
                 <p>Pronto tendremos nuevas membresías disponibles</p>
             </div>
         @endif
-        
+
         <div class="membership-footer-info mt-5">
             <div class="row g-4">
                 <div class="col-md-4">

@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {{-- CSS --}}
+
     <link rel="stylesheet" href="{{ url('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ url('../css/app.css') }}"
     link rel="stylesheet" href="{{ url('css/animations.css') }}">
-    {{-- Font Awesome --}}
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    {{-- Google Fonts --}}
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
@@ -58,7 +58,7 @@
     </div>
   </div>
 </nav>
-<main class="container p-2">
+<main class="p-2">
 
     @if (session()->has('feedback.message'))
     <div class="alert alert-{{ session()->get('feedback.type', 'success') }} alert-dismissible fade show" role="alert">
@@ -79,7 +79,7 @@
                 <p class="mb-4 text-white-50">Tu espacio de trabajo colaborativo en el corazón de la ciudad. Donde la productividad se encuentra con la comunidad.</p>
             </div>
 
-            {{-- Contacto --}}
+
             <div class="col-lg-4 col-md-6">
                 <h4 class="h5 fw-bold mb-4 text-white">Contacto</h4>
                 <ul class="list-unstyled">
@@ -98,7 +98,7 @@
                 </ul>
             </div>
 
-            {{-- Horarios y Enlaces Rápidos --}}
+
             <div class="col-lg-4 col-md-6">
                 <h4 class="h5 fw-bold mb-4 text-white">Horarios de Atención</h4>
                 <ul class="list-unstyled text-white-50 mb-4">

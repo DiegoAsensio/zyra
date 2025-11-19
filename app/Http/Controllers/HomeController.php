@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Membership;
+use App\Models\User;
+
 class HomeController extends Controller
 {
     public function home(){
@@ -9,7 +12,12 @@ class HomeController extends Controller
     }
 
     public function dashboard(){
-        return view('admin.dashboard');
+
+        $users = User::where('role', 'user')->with('membership')->get();
+
+        return view('admin.dashboard',[
+            'users' => $users,
+        ]);
     }
 
 

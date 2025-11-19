@@ -22,4 +22,9 @@ class Membership extends Model
         return $this->belongsTo(Tier::class, 'tier_id');
     }
 
+    public function users()
+    {
+        return $this->hasMany(User::class);
+    }
+
 }

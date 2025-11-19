@@ -1,3 +1,5 @@
+
+
 <x-layouts.admin>
     <x-slot:title>Panel de control</x-slot:title>
 
@@ -13,7 +15,7 @@
                     <i class="fas fa-newspaper fa-2x text-primary"></i>
                 </div>
                 <div>
-                    <h3 class="mb-0">Artículos</h3>
+                    <h2 class="mb-0">Artículos</h2>
                     <p class="text-muted mb-0">Gestiona el blog</p>
                 </div>
             </div>
@@ -28,7 +30,7 @@
                     <i class="fas fa-id-card fa-2x text-success"></i>
                 </div>
                 <div>
-                    <h3 class="mb-0">Membresías</h3>
+                    <h2 class="mb-0">Membresías</h2>
                     <p class="text-muted mb-0">Administra planes</p>
                 </div>
             </div>
@@ -43,13 +45,38 @@
                     <i class="fas fa-chart-line fa-2x text-info"></i>
                 </div>
                 <div>
-                    <h3 class="mb-0">Estadísticas</h3>
-                    <p class="text-muted mb-0">Próximamente</p>
+                    <h2 class="mb-0">Estadísticas</h2>
+                        <table class="users-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nombre</th>
+                                    <th>Membresía</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                                    @forelse($users as $user)
+                    <tr>
+                        <td>{{ $user->id }}</td>
+                        <td>{{ $user->name }}</td>
+                        <td>
+                            @if($user->membership)
+                                {{ $user->membership->name }}
+                            @else
+                                Sin membresía
+                            @endif
+                        </td>
+                    </tr>
+                    @empty
+                    <tr>
+                        <td colspan="3">No hay usuarios</td>
+                    </tr>
+                    @endforelse
+                        </tbody>
+                    </table>
                 </div>
             </div>
-            <button class="btn btn-outline-secondary w-100" disabled>
-                Disponible pronto
-            </button>
+
         </div>
     </div>
 
@@ -88,5 +115,7 @@
                 </div>
             </div>
         </div>
+
+
     </div>
 </x-layouts.admin>

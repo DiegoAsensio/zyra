@@ -19,7 +19,8 @@ class DatabaseSeeder extends Seeder
             TierSeeder::class,
             MembershipSeeder::class,
             ArticleSeeder::class,
-            ArticleHasCategorySeeder::class
+            ArticleHasCategorySeeder::class,
+            ServiceSeeder::class
         ]);
     }
 }
