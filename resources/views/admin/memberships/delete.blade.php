@@ -2,7 +2,7 @@
 
     <x-slot:title>Confirmacion de eliminacion</x-slot:title>
 
-    <h1>Confirmacion para eliminar el plan {{ $membership->name }}</h1>
+    <h1 class="fw-bold text-primary section-title">Confirmacion para eliminar el plan {{ $membership->name }}</h1>
 
 
     <dl class="mb-3">

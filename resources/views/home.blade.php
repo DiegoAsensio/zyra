@@ -3,13 +3,13 @@
 
     {{-- Hero --}}
     <section class="hero-section py-5">
-        <div class="container">
-            <div class="row align-items-center min-vh-75">
+        <div class="container-fluid px-4 px-lg-5">
+            <div class="row align-items-center min-vh-75 mx-auto" style="max-width: 1400px;">
                 <div class="col-lg-6 mb-4 mb-lg-0 fade-in-up">
                     <span class="badge bg-light text-primary mb-3 px-3 py-2">
-                        <i class="fas fa-star me-1"></i>Más de 500 miembros activos
+                        <i class="fas fa-star me-1"></i>Más de 400 miembros activos
                     </span>
-                    <h1 class="display-3 fw-bold mb-4">Zyra Cowork</h1>
+                    <h1 class="display-3 fw-bold mb-4 home-h1">Zyra Cowork</h1>
                     <h2 class="h4 mb-4">Transforma tu forma de trabajar</h2>
                     <p class="lead mb-4">Zyra Cowork es más que un espacio de trabajo. Es una comunidad vibrante donde profesionales independientes, startups y empresas encuentran el ambiente perfecto para crecer, colaborar y prosperar en el corazón de la ciudad.</p>
                     <div class="d-flex gap-3 flex-wrap mb-4">
@@ -371,7 +371,7 @@
     </section>
 
     {{-- CTA --}}
-    <section class="py-5 bg-gradient-info text-white">
+    <section class="py-5 bg-white text-primary">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-8 text-center text-lg-start mb-4 mb-lg-0">
@@ -379,7 +379,7 @@
                     <p class="lead mb-0">Más de 500 profesionales ya confían en Zyra Cowork para impulsar su crecimiento</p>
                 </div>
                 <div class="col-lg-4 text-center text-lg-end">
-                    <a href="{{ route('memberships') }}" class="btn btn-outline-light btn-lg px-5 shadow-lg">
+                    <a href="{{ route('memberships') }}" class="btn btn-primary btn-lg px-5 shadow-lg">
                         <i class="fas fa-rocket me-2"></i>Ver Planes
                     </a>
                 </div>

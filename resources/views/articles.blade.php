@@ -3,11 +3,14 @@
 ?>
 
 <x-layouts.main>
-    <x-slot:title>Blog de nocedades</x-slot:title>
-    <h1>Bienvenidos al blog de novedades</h1>
+    <x-slot:title>Blog de novedades</x-slot:title>
 
 
 <div class="container my-5">
+    <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold text-primary section-title mb-3">Bienvenidos al blog de novedades</h1>
+        <p class="lead text-muted">Encuentra las ultimas noticias del coworking!</p>
+    </div>
   <div class="row g-4">
     @foreach ($articles as $article)
 

@@ -4,7 +4,7 @@
 
 <x-layouts.admin>
 
-    <x-slot:title>Blog de nocedades</x-slot:title>
+    <x-slot:title>Blog de novedades</x-slot:title>
 
 
 <div class="container my-5">

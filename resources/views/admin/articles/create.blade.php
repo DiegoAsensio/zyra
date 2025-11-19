@@ -5,7 +5,7 @@
 
     <x-slot:title>Publicar noticia</x-slot:title>
 
-    <h1>Publicar Noticia</h1>
+    <h1 class="fw-bold text-primary section-title">Publicar Noticia</h1>
 
     @if ($errors->any() )
     <div class="alert alert-danger alert-dismissible fade show" role="alert">

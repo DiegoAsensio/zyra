@@ -6,7 +6,7 @@ $articleCategoryIds = old('editing', false) == false && $article->categories->is
 
     <x-slot:title>Editar noticia</x-slot:title>
 
-    <h1>Editar noticia</h1>
+    <h1 class="fw-bold text-primary section-title">Editar noticia</h1>
 
     @if ($errors->any() )
         <div class="alert alert-danger mb-3 ">Hay campos requeridos sin completar.</div>

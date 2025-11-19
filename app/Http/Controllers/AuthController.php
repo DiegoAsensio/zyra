@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -35,13 +36,39 @@ class AuthController extends Controller
                 'type'    => 'success',
             ]);
         }
-        return back(fallback: route('auth.login.show'))->withInput()->with('feedback.message', 'Error al ingresar, uruasio o contraseña incorrecto');
+        return back(fallback: route('auth.login.show'))->withInput()->with('feedback', [
+                'message' => 'Error al ingresar, mail o contraseña incorrecto.',
+                'type'    => 'danger',
+            ]);
     }
 
-    // public function registerProcess(Request $request){
+     public function store(Request $request){
 
-    //     return back(fallback: route('auth.login.show'))->withInput()->with('feedback.message', 'Error al ingresar, uruasio o contraseña incorrecto');
-    // }
+        $request->validate([
+            'name' => 'required|min:3',
+            'email' => 'required|email',
+            'password' => 'required|min:6'
+        ],[
+            'name.required' => 'Debe ingresar un nombre de usuario.',
+            'name.min' => 'El nombre de usuario debe contener al menos :min caracteres.',
+            'email.required' => 'Se necesita el Email.',
+            'email.email' => 'Debe contener formato de email',
+            'password.required' => 'Debe ingresar la contraseña',
+            'password.min' => 'Debe ingresar al menos :min caracteres'
+        ]);
+
+        $data = $request->only(['name', 'email', 'password']);
+
+        $data['password'] = bcrypt($data['password']);
+
+        $user = User::create($data);
+
+        Auth::login($user);
+
+        return to_route('home')->with('feedback.message', 'Usuario generado con exito.');
+
+        return back(fallback: route('auth.login.show'))->withInput()->with('feedback.message', 'Error al ingresar, uruasio o contraseña incorrecto');
+     }
 
     public function logout(Request $request){
 

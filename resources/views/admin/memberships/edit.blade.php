@@ -2,7 +2,7 @@
 
     <x-slot:title>Editar el plan {{ $membership->name }}</x-slot:title>
 
-    <h1>Editar los datos de {{ $membership->name }}</h1>
+    <h1 class="fw-bold text-primary section-title">Editar los datos de {{ $membership->name }}</h1>
 
     @if ($errors->any() )
         <div class="alert alert-danger mb-3 ">No se Realizo cambios en el plan, revise los datos.</div>

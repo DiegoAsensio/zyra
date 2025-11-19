@@ -5,7 +5,7 @@
 
 <x-layouts.admin>
     <x-slot:title>Detalles de {{ $membership->name}}</x-slot:title>
-    <h1>{{ $membership->name}}</h1>
+    <h1 class="fw-bold text-primary section-title">{{ $membership->name}}</h1>
 
     <dl class="mb-3">
         <dt>Precio:</dt>

@@ -2,7 +2,7 @@
 
     <x-slot:title>Publicar membresia</x-slot:title>
 
-    <h1>Generar membrecia nueva</h1>
+    <h1 class="fw-bold text-primary section-title">Generar membrecia nueva</h1>
 
     @if ($errors->any() )
         <div class="alert alert-danger mb-3 ">Hay campos requeridos sin completar.</div>

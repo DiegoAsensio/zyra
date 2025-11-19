@@ -4,9 +4,9 @@
 
 <x-layouts.admin>
     <x-slot:title>Blog de nocedades</x-slot:title>
-    <h1>Bienvenidos al blog de novedades</h1>
+    <h1 class="fw-bold text-primary section-title">Bienvenidos al blog de novedades</h1>
     <div>
-        <a href="{{ route('articles.create') }}"> Publicar nuevo articulo </a>
+        <a class="btn btn-primary" href="{{ route('articles.create') }}"> Publicar nuevo articulo </a>
     </div>
 
 

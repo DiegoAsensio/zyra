@@ -1,7 +1,7 @@
 <x-layouts.admin>
     <x-slot:title>Confirmacion de eliminacion</x-slot:title>
 
-    <h1>Confirmacion de baja</h1>
+    <h1 class="fw-bold text-primary section-title">Confirmacion de baja</h1>
 
     <p>Esta por dar de baja la publicacion {{$article->title}}</p>
 

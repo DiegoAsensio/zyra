@@ -3,12 +3,11 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'home'])
-->name('home')
-->middleware('guest');
+->name('home');
 
 Route::get('dashboard', [\App\Http\Controllers\HomeController::class, 'dashboard'])
 ->name('dashboard')
-->middleware('auth');
+->middleware(\App\Http\Middleware\EnsureIsAdmin::class);
 
 Route::get('ingresar', [\App\Http\Controllers\AuthController::class, 'show'])
 ->name('auth.login.show')
@@ -19,10 +18,12 @@ Route::post('ingresar', [\App\Http\Controllers\AuthController::class, 'process']
 ->middleware('guest');
 
 Route::get('registro', [\App\Http\Controllers\AuthController::class, 'registerShow'])
-->name('auth.register.show');
+->name('auth.register.show')
+->middleware('guest');
 
-Route::post('registro', [\App\Http\Controllers\AuthController::class, 'registerProcess'])
-->name('auth.register.process');
+Route::post('registro', [\App\Http\Controllers\AuthController::class, 'store'])
+->name('auth.store')
+->middleware('guest');
 
 Route::post('cerrar-sesion', [\App\Http\Controllers\AuthController::class, 'logout'])
 ->name('auth.logout')
@@ -31,11 +32,10 @@ Route::post('cerrar-sesion', [\App\Http\Controllers\AuthController::class, 'logo
 // Rutas de novedades/articulos
 
 Route::get('novedades', [\App\Http\Controllers\ArticlesController::class, 'articles'])
-->name('articles')
-->middleware('guest');;
+->name('articles');
 
 
-Route::middleware('auth')
+Route::middleware(\App\Http\Middleware\EnsureIsAdmin::class)
 ->controller(App\Http\Controllers\ArticlesController::class)
 ->group(function(){
 
@@ -61,10 +61,9 @@ Route::get('novedades/{id}', [\App\Http\Controllers\ArticlesController::class, '
 // Rutas de membresias
 
 Route::get('membresias', [\App\Http\Controllers\MembershipsController::class, 'memberships'])
-->name('memberships')
-->middleware('guest');;
+->name('memberships');
 
-Route::middleware('auth')
+Route::middleware(\App\Http\Middleware\EnsureIsAdmin::class)
 ->controller(\App\Http\Controllers\MembershipsController::class)
 ->group(function(){
 
