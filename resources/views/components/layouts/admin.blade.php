@@ -70,7 +70,7 @@
     {{ $slot }}
 </main>
 
-<footer id="contacto" class="pt-5 pb-4 footer">
+<footer id="contacto" class="pt-5 pb-4 footer text-center">
 
     <p>Panel de control de Zyra Cowork</p>
 

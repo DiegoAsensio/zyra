@@ -32,7 +32,7 @@ class ArticlesController extends Controller
 
         $article = Article::findOrFail($id) ;
 
-        return view ('admin.articles.show',[
+        return view ('showarticles',[
             'article' => $article,
         ]);
     }

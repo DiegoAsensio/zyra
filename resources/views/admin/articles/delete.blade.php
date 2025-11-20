@@ -32,6 +32,6 @@
         <button type="submit" class="btn btn-danger">Eliminar</button>
     </form>
 
-    <a href="{{ route('articles') }}" class="btn btn-outline-secondary mt-3">Volver al blog</a>
+    <a href="{{ route('articles.index') }}" class="btn btn-outline-secondary mt-3">Volver al blog</a>
 </x-layouts.admin>
 

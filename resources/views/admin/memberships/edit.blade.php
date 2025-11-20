@@ -5,7 +5,7 @@
     <h1 class="fw-bold text-primary section-title">Editar los datos de {{ $membership->name }}</h1>
 
     @if ($errors->any() )
-        <div class="alert alert-danger mb-3 ">No se Realizo cambios en el plan, revise los datos.</div>
+        <div class="alert alert-danger mb-3 ">No se realizó cambios en el plan, revise los datos.</div>
     @endif
 
     <form action="{{ route('memberships.update',['id'=>$membership->id]) }}" method="post">

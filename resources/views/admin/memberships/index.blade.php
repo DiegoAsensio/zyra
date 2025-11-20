@@ -4,7 +4,7 @@
 
 <x-layouts.admin>
     <x-slot:title>Dashboard - Membresías</x-slot:title>
-    
+
     <div class="admin-page-header">
         <div>
             <h1 class="fw-bold text-primary section-title">Gestión de Planes</h1>
@@ -40,11 +40,6 @@
                                         <i class="fas fa-ellipsis-v"></i>
                                     </button>
                                     <ul class="dropdown-menu dropdown-menu-end">
-                                        <li>
-                                            <a class="dropdown-item" href="{{ route('memberships.show', ['id' => $membership->id]) }}">
-                                                <i class="fas fa-eye me-2"></i> Ver detalles
-                                            </a>
-                                        </li>
                                         <li>
                                             <a class="dropdown-item" href="{{ route('memberships.edit', ['id' => $membership->id]) }}">
                                                 <i class="fas fa-edit me-2"></i> Editar
@@ -84,9 +79,7 @@
                         </div>
 
                         <div class="admin-card-actions">
-                            <a href="{{ route('memberships.show', ['id' => $membership->id]) }}" class="btn btn-outline-primary btn-sm">
-                                <i class="fas fa-eye me-1"></i> Ver
-                            </a>
+
                             <a href="{{ route('memberships.edit', ['id' => $membership->id]) }}" class="btn btn-outline-secondary btn-sm">
                                 <i class="fas fa-edit me-1"></i> Editar
                             </a>

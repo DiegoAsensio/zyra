@@ -27,15 +27,6 @@ class MembershipsController extends Controller
         ]);
     }
 
-    public function show($id){
-
-        $membership = Membership::findOrFail($id);
-
-        return view('admin.memberships.show',[
-            'membership'=>$membership,
-        ]);
-    }
-
     public function create(){
 
         return view('admin.memberships.create',[

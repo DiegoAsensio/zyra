@@ -75,7 +75,7 @@
                     <div class="card border-0 shadow-sm h-100">
                         <div class="card-body">
                             <i class="fas fa-users fa-3x text-primary mb-3"></i>
-                            <h3 class="display-5 fw-bold text-primary mb-0">500+</h3>
+                            <p class="display-5 fw-bold text-primary mb-0 h3">500+</p>
                             <p class="text-muted mb-0">Miembros Activos</p>
                         </div>
                     </div>
@@ -84,7 +84,7 @@
                     <div class="card border-0 shadow-sm h-100">
                         <div class="card-body">
                             <i class="fas fa-building fa-3x text-success mb-3"></i>
-                            <h3 class="display-5 fw-bold text-success mb-0">1200m²</h3>
+                            <p class="display-5 fw-bold text-success mb-0 h3">1200m²</p>
                             <p class="text-muted mb-0">De Espacio</p>
                         </div>
                     </div>
@@ -93,7 +93,7 @@
                     <div class="card border-0 shadow-sm h-100">
                         <div class="card-body">
                             <i class="fas fa-door-open fa-3x text-warning mb-3"></i>
-                            <h3 class="display-5 fw-bold text-warning mb-0">6</h3>
+                            <p class="display-5 fw-bold text-warning mb-0 h3">6</p>
                             <p class="text-muted mb-0">Salas de Reunión</p>
                         </div>
                     </div>
@@ -102,7 +102,7 @@
                     <div class="card border-0 shadow-sm h-100">
                         <div class="card-body">
                             <i class="fas fa-star fa-3x text-info mb-3"></i>
-                            <h3 class="display-5 fw-bold text-info mb-0">4.9</h3>
+                            <p class="display-5 fw-bold text-info mb-0 h3">4.9</p>
                             <p class="text-muted mb-0">Calificación Promedio</p>
                         </div>
                     </div>
@@ -157,13 +157,13 @@
                     <div class="row g-3">
                         <div class="col-sm-6">
                             <div class="p-3 bg-light rounded-3">
-                                <h4 class="h5 mb-2"><i class="fas fa-rocket text-primary me-2"></i>2020</h4>
+                                <p class="h5 mb-2"><i class="fas fa-rocket text-primary me-2"></i>2020</p>
                                 <p class="mb-0 small">Fundación de Zyra Cowork</p>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="p-3 bg-light rounded-3">
-                                <h4 class="h5 mb-2"><i class="fas fa-users text-success me-2"></i>500+</h4>
+                                <p class="h5 mb-2"><i class="fas fa-users text-success me-2"></i>500+</p>
                                 <p class="mb-0 small">Miembros en 2024</p>
                             </div>
                         </div>

@@ -272,9 +272,13 @@ section .container-fluid {
 }
 
 .card-img-top {
-    height: 240px;
+    height: 530px;
     object-fit: cover;
     transition: transform 0.5s ease;
+}
+
+.article-home {
+    height: 300px;
 }
 
 .card:hover .card-img-top {

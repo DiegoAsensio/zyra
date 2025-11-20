@@ -75,13 +75,13 @@
     <div class="container">
         <div class="row g-4 mb-4">
             <div class="col-lg-4 col-md-6">
-                <h3 class="h4 fw-bold mb-4 text-white">Zyra Cowork</h3>
+                <h2 class="h4 fw-bold mb-4 text-white">Zyra Cowork</h2>
                 <p class="mb-4 text-white-50">Tu espacio de trabajo colaborativo en el corazón de la ciudad. Donde la productividad se encuentra con la comunidad.</p>
             </div>
 
 
             <div class="col-lg-4 col-md-6">
-                <h4 class="h5 fw-bold mb-4 text-white">Contacto</h4>
+                <h3 class="h5 fw-bold mb-4 text-white">Contacto</h3>
                 <ul class="list-unstyled">
                     <li class="mb-3">
                         <span class="text-white-50">Jorge Luis Borges 1958<br>Palermo, Buenos Aires</span>
@@ -100,7 +100,7 @@
 
 
             <div class="col-lg-4 col-md-6">
-                <h4 class="h5 fw-bold mb-4 text-white">Horarios de Atención</h4>
+                <h3 class="h5 fw-bold mb-4 text-white">Horarios de Atención</h3>
                 <ul class="list-unstyled text-white-50 mb-4">
                     <li class="mb-2"><strong class="text-white">Lunes a Viernes:</strong> 8:00 AM - 10:00 PM</li>
                     <li class="mb-2"><strong class="text-white">Sábados:</strong> 9:00 AM - 6:00 PM</li>
@@ -110,7 +110,7 @@
                     </li>
                 </ul>
 
-                <h5 class="h6 fw-bold mb-3 text-white">Enlaces Rápidos</h5>
+                <h3 class="h6 fw-bold mb-3 text-white">Enlaces Rápidos</h3>
                 <ul class="list-unstyled">
                     <li class="mb-2">
                         <a href="/membresias" class="text-white-50 text-decoration-none">→ Membresias</a>

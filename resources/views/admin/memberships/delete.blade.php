@@ -19,9 +19,9 @@
     <p>Una vez eliminado el plan no se podran recuperar los datos</p>
     <p>¿Continuar de todos modos?</p>
 
-    <a href="{{ route('memberships.index')}}" class="btn btn-warning">Cancelar</a>
     <form action="{{ route('memberships.destroy', ['id' => $membership->id]) }}" method="post">
         @csrf
+        <a href="{{ route('memberships.index')}}" class="btn btn-outline-secondary">Cancelar</a>
         <button type="submit" class="btn btn-danger">Eliminar</button>
     </form>
 

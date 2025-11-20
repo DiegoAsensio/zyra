@@ -9,7 +9,7 @@
     </div>
 
     <div class="dashboard-stats">
-        <div class="stat-card">
+        <div class="stat-card my-auto">
             <div class="d-flex align-items-center mb-3">
                 <div class="bg-primary bg-opacity-10 rounded-3 p-3 me-3">
                     <i class="fas fa-newspaper fa-2x text-primary"></i>
@@ -24,7 +24,7 @@
             </a>
         </div>
 
-        <div class="stat-card">
+        <div class="stat-card my-auto">
             <div class="d-flex align-items-center mb-3">
                 <div class="bg-success bg-opacity-10 rounded-3 p-3 me-3">
                     <i class="fas fa-id-card fa-2x text-success"></i>
@@ -39,39 +39,39 @@
             </a>
         </div>
 
-        <div class="stat-card">
+        <div class="stat-card my-auto">
             <div class="d-flex align-items-center mb-3">
                 <div class="bg-info bg-opacity-10 rounded-3 p-3 me-3">
                     <i class="fas fa-chart-line fa-2x text-info"></i>
                 </div>
                 <div>
-                    <h2 class="mb-0">Estadísticas</h2>
-                        <table class="users-table">
-                            <thead>
+                    <h2 class="mb-0">Servicios activos</h2>
+                        <table  class="table table-borderless">
+                            <thead class="table-light">
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Nombre</th>
-                                    <th>Membresía</th>
+                                    <th class="text-primary">ID</th>
+                                    <th class="text-primary">Nombre</th>
+                                    <th class="text-primary">Membresía</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                                    @forelse($users as $user)
-                    <tr>
-                        <td>{{ $user->id }}</td>
-                        <td>{{ $user->name }}</td>
-                        <td>
-                            @if($user->membership)
-                                {{ $user->membership->name }}
-                            @else
-                                Sin membresía
-                            @endif
-                        </td>
-                    </tr>
-                    @empty
-                    <tr>
-                        <td colspan="3">No hay usuarios</td>
-                    </tr>
-                    @endforelse
+                                @forelse($users as $user)
+                                <tr>
+                                        <td>{{ $user->id }}</td>
+                                        <td>{{ $user->name }}</td>
+                                        <td>
+                                            @if($user->membership)
+                                                {{ $user->membership->name }}
+                                            @else
+                                                Sin membresía
+                                            @endif
+                                        </td>
+                                    </tr>
+                                @empty
+                                    <tr>
+                                        <td colspan="3">No hay usuarios</td>
+                                    </tr>
+                                @endforelse
                         </tbody>
                     </table>
                 </div>
@@ -84,7 +84,7 @@
         <div class="col-lg-6">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Accesos rápidos</h5>
+                    <h2 class="card-title">Accesos rápidos</h2>
                     <div class="list-group list-group-flush">
                         <a href="{{ route('articles.create') }}" class="list-group-item list-group-item-action">
                             <i class="fas fa-plus-circle me-2 text-primary"></i> Publicar nuevo artículo
@@ -100,7 +100,7 @@
         <div class="col-lg-6">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Información del sistema</h5>
+                    <h2 class="card-title">Información del sistema</h2>
                     <ul class="list-unstyled mb-0">
                         <li class="mb-2">
                             <strong>Usuario:</strong> {{ auth()->user()->name ?? 'Administrador' }}

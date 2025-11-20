@@ -68,8 +68,8 @@ $articleCategoryIds = old('editing', false) == false && $article->categories->is
             @enderror
         </div>
         <button type="submit" class="btn btn-primary" name="editing" value="true">Actualizar</button>
+        <a href="{{ route('articles.index') }}" class="btn btn-danger">Cancelar</a>
     </form>
-    <a href="{{ route('articles.index') }}" class="btn btn-alert-danger mt-3">Cancelar</a>
 
 
 

@@ -34,7 +34,6 @@
                         @endforelse
                     </td>
                     <td>
-                        <a href="{{ route('articles.show', ['id'=>$article->id]) }}" class="btn btn-primary mt-auto">Explorar</a>
                         <a href="{{ route('articles.edit', ['id'=>$article->id]) }}" class="btn btn-secondary mt-auto">Editar</a>
                         <a href="{{ route('articles.delete', ['id'=>$article->id]) }}" class="btn btn-danger mt-auto">Eliminar</a>
                     </td>

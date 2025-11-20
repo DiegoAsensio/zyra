@@ -2,7 +2,7 @@
 
     <x-slot:title>Publicar membresia</x-slot:title>
 
-    <h1 class="fw-bold text-primary section-title">Generar membrecia nueva</h1>
+    <h1 class="fw-bold text-primary section-title">Generar membresia nueva</h1>
 
     @if ($errors->any() )
         <div class="alert alert-danger mb-3 ">Hay campos requeridos sin completar.</div>
@@ -18,10 +18,14 @@
             @enderror
         </div>
         <div class="mb-3">
-            <label for="category">Categoria</label>
-            <input type="text" name="category" id="category" class="form-control @error('category') is-invalid @enderror" @error('category') aria-invalid="true" aria-errormessage="error-category" @enderror value="{{ old('category') }}">
-            @error('category')
-                <div class="text-danger" id="error-category">{{ $message }}</div>
+            <label for="tier_id">Nivel</label>
+            <select name="tier_id" id="tier_id" class="form-select @error('tier_id') is-invalid @enderror" @error('tier_id') aria-invalid="true" aria-errormessage="error-tier_id" @enderror >
+                @foreach ($tiers as $tier)
+                    <option value="{{ $tier->id }}" @selected($tier->id == old('tier_id'))> {{ $tier->name }} </option>
+                @endforeach
+            </select>
+            @error('tier_id')
+                <div class="text-danger" id="error-tier_id">{{ $message }}</div>
             @enderror
         </div>
         <div class="mb-3">

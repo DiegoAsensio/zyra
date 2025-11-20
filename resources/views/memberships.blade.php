@@ -5,7 +5,7 @@
 <x-layouts.main>
     <x-slot:title>Membresías</x-slot:title>
 
-    <div class="container py-5">
+    <div class="container my-2">
         <div class="text-center mb-5">
             <h1 class="display-4 fw-bold text-primary section-title mb-3">Encuentra tu plan ideal</h1>
             <p class="lead text-muted">Elige la membresía que mejor se adapte a tus necesidades</p>
@@ -96,21 +96,21 @@
                 <div class="col-md-4">
                     <div class="info-card">
                         <i class="fas fa-shield-alt"></i>
-                        <h3>Sin ataduras</h3>
+                        <span class="h3">Sin ataduras</span>
                         <p>Cancela cuando quieras, sin penalizaciones</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="info-card">
                         <i class="fas fa-headset"></i>
-                        <h3>Soporte 24/7</h3>
+                        <span class="h3">Soporte 24/7</span>
                         <p>Estamos aquí para ayudarte siempre que lo necesites</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="info-card">
                         <i class="fas fa-calendar-check"></i>
-                        <h3>Prueba gratis</h3>
+                        <span class="h3">Prueba gratis</span>
                         <p>Primer día de cortesía para conocer el espacio</p>
                     </div>
                 </div>
