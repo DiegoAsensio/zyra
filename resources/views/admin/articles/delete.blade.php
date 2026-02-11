@@ -30,8 +30,8 @@
     <form action="{{ route('articles.destroy', ['id' => $article->id]) }}" method="post">
         @csrf
         <button type="submit" class="btn btn-danger">Eliminar</button>
+        <a href="{{ route('articles.index') }}" class="btn btn-outline-secondary mt-3">Cancelar</a>
     </form>
 
-    <a href="{{ route('articles.index') }}" class="btn btn-outline-secondary mt-3">Volver al blog</a>
 </x-layouts.admin>
 

@@ -66,6 +66,7 @@
             @enderror
         </div>
         <button type="submit" class="btn btn-primary">Publicar</button>
+        <a href="{{ route('articles.index') }}" class="btn btn-outline-secondary mt-3">Cancelar</a>
     </form>
 
 

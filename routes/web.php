@@ -87,3 +87,6 @@ Route::middleware(\App\Http\Middleware\EnsureIsAdmin::class)
 
 Route::get('membresias/{id}', [\App\Http\Controllers\MembershipsController::class, 'show'])
 ->name('memberships.show');
+
+Route::get('finalizar-compra', [\App\Http\Controllers\MercadoPagoController::class, 'index'])
+->name('chekout');

@@ -32,7 +32,7 @@
                         <div class="admin-card-header">
                             <div class="d-flex justify-content-between align-items-start">
                                 <div>
-                                    <h3 class="membership-name">{{ $membership->name }}</h3>
+                                    <h2 class="membership-name">{{ $membership->name }}</h2>
                                     <span class="tier-badge">{{ $membership->tier->name }}</span>
                                 </div>
                                 <div class="dropdown">
