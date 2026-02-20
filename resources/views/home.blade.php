@@ -10,7 +10,7 @@
                         <i class="fas fa-star me-1"></i>Más de 400 miembros activos
                     </span>
                     <h1 class="display-3 fw-bold mb-4 home-h1">Zyra Cowork</h1>
-                    <h2 class="h4 mb-4">Transforma tu forma de trabajar</h2>
+                    <p class="h4 mb-4">Transforma tu forma de trabajar</p>
                     <p class="lead mb-4">Zyra Cowork es más que un espacio de trabajo. Es una comunidad vibrante donde profesionales independientes, startups y empresas encuentran el ambiente perfecto para crecer, colaborar y prosperar en el corazón de la ciudad.</p>
                     <div class="d-flex gap-3 flex-wrap mb-4">
                         <a href="{{ route('memberships') }}" class="btn btn-light btn-lg px-4 shadow">
