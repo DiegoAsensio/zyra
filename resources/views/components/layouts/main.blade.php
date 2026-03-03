@@ -23,9 +23,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-
-
+      <ul class="navbar-nav me-auto">
         <li class="nav-item">
           <x-nav-link route="home">Inicio</x-nav-link>
         </li>
@@ -35,25 +33,41 @@
         <li class="nav-item">
           <x-nav-link route="memberships">Membresias</x-nav-link>
         </li>
+      </ul>
 
+      <ul class="navbar-nav ms-auto">
         @auth
-
-        <li class="nav-item">
-          <form action="{{ route('auth.logout') }}" method="post">
-            @csrf
-            <button type="submit" class="nav-link">Cerrar sesion</button>
-          </form>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-user-circle me-1"></i>
+            {{ auth()->user()->name }}
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><h6 class="dropdown-header">{{ auth()->user()->email }}</h6></li>
+            <li><hr class="dropdown-divider"></li>
+            @if(auth()->user()->role === 'admin')
+              <li>
+                <a class="dropdown-item" href="{{ route('dashboard') }}">
+                  <i class="fas fa-tachometer-alt me-2"></i>Panel de administración
+                </a>
+              </li>
+              <li><hr class="dropdown-divider"></li>
+            @endif
+            <li>
+              <form action="{{ route('auth.logout') }}" method="post">
+                @csrf
+                <button type="submit" class="dropdown-item text-danger">
+                  <i class="fas fa-sign-out-alt me-2"></i>Cerrar sesión
+                </button>
+              </form>
+            </li>
+          </ul>
         </li>
-
         @else
-
         <li class="nav-item">
             <x-nav-link route="auth.login.show">Ingresar</x-nav-link>
         </li>
-
         @endauth
-
-
       </ul>
     </div>
   </div>

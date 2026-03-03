@@ -23,7 +23,7 @@ class MembershipsController extends Controller
         $memberships = Membership::with(['tier'])->get();
 
         return view ('admin.memberships.index',[
-            'memberships'=>$memberships,
+            'memberships' => $memberships,
         ]);
     }
 

@@ -47,7 +47,7 @@ class AuthController extends Controller
         $request->validate([
             'name' => 'required|min:3',
             'email' => 'required|email',
-            'password' => 'required|min:6'
+            'password' => 'required|min:8'
         ],[
             'name.required' => 'Debe ingresar un nombre de usuario.',
             'name.min' => 'El nombre de usuario debe contener al menos :min caracteres.',

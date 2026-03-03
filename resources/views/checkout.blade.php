@@ -1,26 +1,14 @@
 <?php
-/** @var \Illuminate\Database\Eloquent\Collection $memberships */
+/** @var \App\Models\Membership $membership */
 ?>
 
 <x-layouts.main>
-    <x-slot:title>Membresías</x-slot:title>
+    <x-slot:title>Finalizar compra</x-slot:title>
 
-    <div class="container my-2">
-        <div class="text-center mb-5">
-            <h1 class="display-4 fw-bold text-primary section-title mb-3">Encuentra tu plan ideal</h1>
-            <p class="lead text-muted">Elige la membresía que mejor se adapte a tus necesidades</p>
-        </div>
-
-        <div class="row g-4">
-            @foreach ($memberships as $membership)
-                <div class="col-lg-4 col-md-6">
-                    <div class="membership-card {{ $loop->iteration === 2 ? 'featured' : '' }}">
-                        @if($loop->iteration === 2)
-                            <div class="featured-badge">
-                                <i class="fas fa-star"></i> Más popular
-                            </div>
-                        @endif
-
+    <h1>Adquirir membresia</h1>
+    <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                    <div class="membership-card featured">
                         <div class="membership-header">
                             <div class="tier-icon">
                                 @switch($membership->tier->name)
@@ -73,48 +61,23 @@
                         </div>
 
                         <div class="membership-footer">
-                            <a href="{{ route('checkout', $membership->id) }}" class="btn btn-membership {{ $loop->iteration === 2 ? 'btn-featured' : '' }}">
-                                Elegir plan
-                            </a>
+                            <div id="mercadopago_payment_button" >
+                            </div>
                             <p class="text-muted small mt-3 mb-0">Sin compromiso de permanencia</p>
                         </div>
                     </div>
                 </div>
-            @endforeach
-        </div>
-
-        @if($memberships->isEmpty())
-            <div class="empty-state">
-                <i class="fas fa-inbox"></i>
-                <h3>No hay planes disponibles</h3>
-                <p>Pronto tendremos nuevas membresías disponibles</p>
             </div>
-        @endif
 
-        <div class="membership-footer-info mt-5">
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="info-card">
-                        <i class="fas fa-shield-alt"></i>
-                        <span class="h3">Sin ataduras</span>
-                        <p>Cancela cuando quieras, sin penalizaciones</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="info-card">
-                        <i class="fas fa-headset"></i>
-                        <span class="h3">Soporte 24/7</span>
-                        <p>Estamos aquí para ayudarte siempre que lo necesites</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="info-card">
-                        <i class="fas fa-calendar-check"></i>
-                        <span class="h3">Prueba gratis</span>
-                        <p>Primer día de cortesía para conocer el espacio</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
+            <script src="https://sdk.mercadopago.com/js/v2"></script>
+            <script>
+                const mp = new MercadoPago('<?= $MPPublicKey;?>');
+                mp.bricks().create('wallet', 'mercadopago_payment_button', {
+                    initialization:{
+                        preferenceId: "<?= $preference->id; ?>",
+                    }
+                });
+                renderWalletBrick(bricksBuilder);
+</script>
 </x-layouts.main>

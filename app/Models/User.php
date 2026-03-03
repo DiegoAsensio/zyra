@@ -36,6 +36,7 @@ class User extends Authenticatable
         'email',
         'password',
         'role',
+        'membership_id',
     ];
 
     /**
@@ -61,10 +62,12 @@ class User extends Authenticatable
         ];
     }
 
-    public function membership(){
-
-    return $this->belongsTo(Membership::class);
-
+    /**
+     * Get the membership associated with the user
+     */
+    public function membership()
+    {
+        return $this->belongsTo(Membership::class, 'membership_id', 'id');
     }
 
     /**
@@ -96,6 +99,4 @@ class User extends Authenticatable
     {
         return $this->hasMany(Reservation::class);
     }
-
-
 }
