@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Middleware\VerifyPaymentValidation;
+use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'home'])
@@ -88,5 +90,17 @@ Route::middleware(\App\Http\Middleware\EnsureIsAdmin::class)
 Route::get('membresias/{id}', [\App\Http\Controllers\MembershipsController::class, 'show'])
 ->name('memberships.show');
 
-Route::get('finalizar-compra', [\App\Http\Controllers\MercadoPagoController::class, 'index'])
-->name('chekout');
+Route::get('checkout/success', [\App\Http\Controllers\MercadoPagoController::class, 'success'])
+->name('checkout.success');
+
+Route::get('checkout/failure', [\App\Http\Controllers\MercadoPagoController::class, 'failure'])
+->name('checkout.failure');
+
+Route::post('checkout/confirmacion-de-pago', [\App\Http\Controllers\MercadoPagoController::class, 'confirmPayment'])
+->middleware(VerifyPaymentValidation::class)
+->withoutMiddleware(VerifyCsrfToken::class)
+->name('checkout.confirm.payment');
+
+Route::get('checkout/{membership}', [\App\Http\Controllers\MercadoPagoController::class, 'index'])
+->name('checkout');
+

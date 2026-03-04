@@ -129,13 +129,13 @@
                                             <td class="align-middle">
                                                 <small class="text-muted">
                                                     <i class="far fa-calendar me-1"></i>
-                                                    {{ $user->created_at ? $user->created_at->format('d/m/Y') : 'N/A' }}
+                                                    {{ $user->updated_at ? $user->updated_at->format('d/m/Y') : 'N/A' }}
                                                 </small>
                                             </td>
                                             <td class="align-middle">
-                                                @if($user->membership && $user->created_at)
+                                                @if($user->membership && $user->updated_at)
                                                     @php
-                                                        $expirationDate = $user->created_at->copy()->addDays($user->membership->daypass);
+                                                        $expirationDate = $user->updated_at->copy()->addDays(30);
                                                         $isExpired = $expirationDate->isPast();
                                                     @endphp
                                                     <small class="{{ $isExpired ? 'text-danger' : 'text-muted' }}">
@@ -176,7 +176,7 @@
                                             </div>
                                             <span class="badge bg-light text-dark">#{{ $user->id }}</span>
                                         </div>
-                                        
+
                                         <div class="row g-2">
                                             <div class="col-12">
                                                 <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
@@ -190,7 +190,7 @@
                                                     @endif
                                                 </div>
                                             </div>
-                                            
+
                                             <div class="col-12">
                                                 <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
                                                     <span class="text-muted small">
@@ -201,7 +201,7 @@
                                                     </span>
                                                 </div>
                                             </div>
-                                            
+
                                             <div class="col-12">
                                                 <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
                                                     <span class="text-muted small">
@@ -223,7 +223,7 @@
                                                     @endif
                                                 </div>
                                             </div>
-                                            
+
                                             <div class="col-12">
                                                 <div class="d-flex justify-content-between align-items-center py-2">
                                                     <span class="text-muted small">
